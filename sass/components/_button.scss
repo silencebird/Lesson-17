@@ -1,0 +1,14 @@
+.buy {
+  @include text(1em, 400, 1em);
+  text-shadow: 0 -1px 0 rgba(171, 133, 0, 0.75);
+  background-color: #dfad00;
+  box-shadow: 0 2px 0 #ab8500;
+  color: white;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+.buy{
+  padding: 7px 18px;
+  display: inline-block;
+}

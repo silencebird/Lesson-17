@@ -1,0 +1,26 @@
+.recomend{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 30px;
+  background:rgba(0, 0 , 0 , 0.65);
+  background-size: cover;
+  a{
+    @include text(0.75em, 400, inherit);
+    color: white;
+
+  &:hover {
+    color: #dfad00;
+  }
+  }
+}
+.recomend ul{
+  width: 50%;
+  float: left;
+  li{
+    white-space: nowrap;
+    text-align: left;
+    width: 100%;
+  }
+}

@@ -1,0 +1,195 @@
+.head-nav a, .gam-menu a{
+  @include text(1.125em, 400, 1em);
+  color: white;
+  text-transform:capitalize;
+}
+
+.slider{
+  color: #7c8ca0;
+  q{
+    @include text(1.5em, 300, 1.875em);
+
+    font-style: italic;
+  }
+  .q-author {
+    font-size: 1.125em;
+    a {
+      color: #7c8ca0;
+      text-decoration: underline;
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+h2 {
+  @include text(2.25em, 100, inherit);
+
+  .welcome &, .teledom & {
+    color: white;
+  }
+}
+h3{
+  @include text(1.5em, 100,3em);
+  color: white;
+}
+
+.more{
+  @include text(0.75em, 400, 1em);
+  font-family: 'Roboto', sans-serif;
+  line-height: 18px;
+  color: #4c93c3;
+  .news &{
+    font-style: italic;
+  }
+}
+
+.main-text{
+  @include text(0.75em, 300, 1em);
+  text-align: left;
+  .i-recomend &, .life &{
+    color: #323232;
+  }
+  .welcome & {
+    color: white;
+  }
+  footer &{
+    color: #969696;
+    @media screen and (min-width:320px) and (max-width:799px){
+
+     }
+  }
+}
+
+.button {
+  @include text(1em, 700, 1em);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.datails{
+  @include text(0.875em, 400, 1.125em);
+  font-style: italic;
+  color: #4c93c3;
+}
+/////////////////////////////CAROUSEL///////////////////////////////////////////
+
+.banner{
+  p{
+    @include text(3.75em, 300, inherit);
+  }
+  color: white;
+}
+
+/////////////////////////////CAROUSEL///////////////////////////////////////////
+
+
+/////////////////////////////NEWS///////////////////////////////////////////
+.news{
+  .main-text{
+    @include text(0.875em, 400, 1.125em);
+  }
+}
+/////////////////////////////NEWS///////////////////////////////////////////
+
+/////////////////////////////I-RECOMEND/////////////////////////////////////
+.i-recomend{
+  li {
+    @include text(0.875em, 400, 1.125em);
+    color: #323232;
+    .goods-description {
+      font-size: 0.75em;
+    }
+    .price{
+      @include text(1em, 900, 1.125em);
+      color: #4c93c3;
+    }
+  }
+}
+.recomend-menu a{
+  @include text(0.875em, 900, 1.125em);
+  color: #646464;
+  &:hover{
+    color: #dfad00;
+  }
+}
+/////////////////////////////I-RECOMEND/////////////////////////////////////
+
+/////////////////////////////TELEDOM////////////////////////////////////////
+.teledom{
+  .video-list {
+    li:before {
+      content: "\f0da";
+      font-family: 'FontAwesome';
+      color: #dfad00;
+    }
+    a{
+      @include text(0.75em, 400, 1.5em);
+      color: white;
+    }
+  }
+}
+
+/////////////////////////////TELEDOM////////////////////////////////////////
+
+
+////////////////////////////////LIFE////////////////////////////////////////
+.life{
+  .credo{
+    @include text(2.25em, 100, inherit);
+    color: #646464;
+  }
+}
+
+////////////////////////////////LIFE////////////////////////////////////////
+
+/////////////////////////////PARTNERS////////////////////////////////////////
+
+.partners{
+  p{
+    @include text(0.75em, 300, 1em);
+    color: #2f2f2f;
+  }
+  li p:nth-child(2){
+     @include text(0.875em, 400, 1em);
+    color: #323232;
+   }
+}
+/////////////////////////////PARTNERS////////////////////////////////////////
+
+/////////////////////////////WELCOME////////////////////////////////////////
+
+.welcome{
+
+}
+
+/////////////////////////////WELCOME////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////FOOTER////////////////////////////////////////
+
+footer{
+    .main-text{
+      color: #969696;
+    }
+    a {
+      @include text(0.75em, 400, 1em);
+      color: white;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+/////////////////////////////FOOTER////////////////////////////////////////
+
+
+@media screen and (min-width:320px) and (max-width:999px){
+  body{
+    font-size:12px;
+  }
+}

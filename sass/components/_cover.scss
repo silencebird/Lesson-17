@@ -1,0 +1,43 @@
+header {
+  background:rgba(0, 0 , 0 , 0.65);
+  background-size: cover;
+}
+.slider{
+    background: url('../images/carousel/back.png') no-repeat;
+    background-size: cover;
+.banner{
+  background-color: rgba(30,144,255,0.5);
+}
+
+  .flexslider{
+    background: rgba(255, 255, 255 , 0);
+    border:0;
+  }
+}
+.news, .partners{
+  background:#e4e4e4;
+  background-size: cover;
+ }
+
+.teledom{
+  background: url('../images/teledom/back.png') no-repeat;
+  background-size: cover;
+  .tel-cover-blue{
+    background-color: rgba(30,144,255,0.5);
+  }
+
+}
+
+.life{
+  background: url('../images/life/back.png') no-repeat;
+  background-size: cover;
+}
+.welcome{
+  background: #e0e4e4;
+}
+
+footer{
+  background-color: #323232;
+  background-size: cover;
+}
+
