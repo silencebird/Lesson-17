@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo $title; ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <script src="js/jquery-2.2.0.js"></script>
+
+</head>
+<body>
 <!---------------------------------------HEADER------------------------------------>
 <header class="clearfix catalogs" id="home">
     <div class="header-bl-opacity">
@@ -33,50 +48,47 @@
                 </nav>
             </div>
 
+   <?php include ('inc/array.php') ?>
+
+
+
+
             <nav class="head-nav clearfix">
                 <ul class="clearfix">
-                    <li>
-                        <a href="#" data-href="#new">Новости</a>
-                    </li>
-                    <li class="recomendation">
-                        <a href="#" data-href="#i-recomend">Рекомендую</a>
-                        <div class="recomend">
+                    <?php foreach ($head_nav as $items){?>
 
-                            <ul>
-                                <li><a href="#"> Кондиционер</a></li>
-                                <li><a href="#">Бальзам для век</a></li>
-                                <li><a href="#">Динамический увлажняющий крем</a></li>
-                                <li><a href="#">Лосьон для тела "Солярис"</a></li>
-                                <li><a href="#">Очищающее молочко для лица</a></li>
-                                <li><a href="#">Комплект пробников кремов</a></li>
-                                <li><a href="#">Грязевая маска для лица</a></li>
-                                <li><a href="#">Крем для рук и ногтей</a></li>
-                            </ul>
 
-                            <ul>
-                                <li><a href="#">Солярис для лица c витамином "А"</a></li>
-                                <li><a href="#">Ночной крем</a></li>
-                                <li><a href="#">Водные компрессы Мёртвого Моря</a></li>
-                                <li><a href="#">Квартет солей Мертвого моря</a></li>
-                                <li><a href="#">Шампунь против перхоти</a></li>
-                                <li><a href="#">Шампунь для повседневного пользования</a></li>
-                                <li><a href="#">Тонизирующий лосьон для тела</a></li>
-                                <li><a href="#">Зубная паста "Шинсин"</a></li>
-                            </ul>
+                    <li class="<?php echo $items['class']; ?>">
 
+                        <a href="#" data-href="<?php echo $items['url']; ?>"> <?php echo $items['title']; ?></a>
+
+                        <?php if ($items['dropdown']){?>
+
+                        <div class="<?php echo $items['dropdown_class']; ?>">
+
+                        <ul>
+                                 <?php foreach ($$items['dropdown'] as $subitems){?>
+
+                            <li><a href="#"> <?php echo $subitems; ?></a></li>
+                        <?php
+                        }
+                        ?>
+                        </ul>
                         </div>
+                        <?php
+                        }
+                        ?>
                     </li>
-                    <li>
-                        <a href="#" data-href="#welcome">Приглашаю</a>
-                    </li>
-                    <li>
-                        <a href="#" data-href="#i-recomend">акции</a>
-                    </li>
-                    <li>
-                        <a href="#" data-href="#footer">Контакты</a>
-                    </li>
+                    <?php
+                    }
+                    ?>
+
+
                 </ul>
             </nav>
+
+
+
         </div>
     </div>
 </header>

@@ -1,23 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>lesson-16</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/main.css">
-
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-    <script src="js/jquery-2.2.0.js"></script>
-
-</head>
-<body>
-
+<?php
+$title ='main page';
+?>
 <!---------------------------------------HEADER------------------------------------>
 <?php
 include_once('inc/header.html');
 ?>
+
+
+
 <!------------------------------------------HEADER------------------------------------>
 
 <!------------------------------------------MAIN-------------------------------------->
@@ -28,51 +18,21 @@ include_once('inc/header.html');
         <section class="slider clearfix" id="slider">
             <div class="flexslider">
                 <ul class="slides" >
-
-                    <li class="item-1">
-                        <div class="container">
-                            <div class="banner">
-                                <p>Купить продукцию сейчас</p>
-                                <div >
-                                    <a href="catalog.php" class="buy">Узнать больше <i class="fa fa-caret-right"></i></a>
+                    <?php foreach ($slider as $items) { ?>
+                        <li class="<?php echo $items['item']; ?>">
+                            <div class="container">
+                                <div class="banner">
+                                    <p><?php echo $items['article']; ?></p>
+                                    <div>
+                                        <a href="<?php echo $items['url']; ?>" class="buy">Узнать больше <i
+                                                class="fa fa-caret-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-
-                    <li class="item-2">
-                        <div class="container">
-                            <div class="banner">
-                                <p>Купить продукцию сейчас</p>
-                                <div >
-                                    <a href="catalog.php" class="buy">Узнать больше <i class="fa fa-caret-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="item-3">
-                        <div class="container">
-                            <div class="banner">
-                                <p>Купить продукцию сейчас</p>
-                                <div >
-                                    <a href="catalog.php" class="buy">Узнать больше <i class="fa fa-caret-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="item-4">
-                        <div class="container">
-                            <div class="banner">
-                                <p>Купить продукцию сейчас</p>
-                                <div >
-                                    <a href="catalog.php" class="buy">Узнать больше <i class="fa fa-caret-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
+                        </li>
+                        <?php
+                        }
+                        ?>
                 </ul>
             </div>
         </section>
@@ -80,46 +40,24 @@ include_once('inc/header.html');
 <!--------------------------------------Carousel-------------------------------------->
 
 <!------------------------------------------NEWS-------------------------------------->
-<div class="news clearfix" id="new">
-    <div class="container">
-        <h2>Новости</h2>
-        <ul class="clearfix">
+        <div class="news clearfix" id="new">
+            <div class="container">
+                <h2>Новости</h2>
+                <ul class="clearfix">
 
-            <li class="xs-col-12 sm-col-6 m-col-6 lm-col-3 lg-col-3 ">
-                <div>
-                    <img src="images/news/1.png" alt=""/>
-                    <p class="main-text">
-                        Доктор Нонна на телеканале "Домашний" в программе "Спросите Повара"
-                    </p>
-                </div>
-                <div> <a href="#" class="more">Подробнеее <i class="fa fa-caret-right"></i></a></div>
-            </li >
-
-            <li class="xs-col-12 sm-col-6 m-col-6 lm-col-3 lg-col-3 ">
-                <div>
-                    <img src="images/news/2.png" alt="">
-                    <p class="main-text">
-                        Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"
-                    </p>
-                </div>
-                <div> <a href="#" class="more">Подробнеее <i class="fa fa-caret-right"></i></a></div>
-            </li>
-            <li class="xs-col-12 sm-col-6 m-col-6 lm-col-3 lg-col-3 ">
-                <div>
-                    <img src="images/news/1.png" alt=""/>
-                    <p class="main-text">
-                        Доктор Нонна на телеканале "Домашний" в программе "Спросите Повара"
-                    </p>
-                </div>
-                <div> <a href="#" class="more">Подробнеее <i class="fa fa-caret-right"></i></a></div>
-            </li>
-            <li class="xs-col-12 sm-col-6 m-col-6 lm-col-3 lg-col-3 ">
-                <img src="images/news/4.png" alt="">
-                <p class="main-text">
-                    Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"
-                </p>
-                <a href="#" class="more">Подробнеее <i class="fa fa-caret-right"></i></a>
-            </li>
+                    <?php foreach ($news as $items){ ?>
+                        <li class="xs-col-12 sm-col-6 m-col-6 lm-col-3 lg-col-3 ">
+                            <div>
+                                <img src="<?php echo $items['img']; ?>"/>
+                                <p class="main-text">
+                                    <?php echo $items['article']; ?>
+                                </p>
+                            </div>
+                            <div> <a href="<?php echo $items['url']; ?>" class="more">Подробнеее <i class="fa fa-caret-right"></i></a></div>
+                        </li >
+                        <?php
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -141,59 +79,32 @@ include_once('inc/header.html');
 
                 <div class="catalog ">
                     <ul class="clearfix">
-                        <li >
-                            <img src="images/i-recomend/defult-shampoo.png" alt="shampoo">
-                            <p class="main-goods-type"> Шампунь ежедневного пользования </p>
+                        <?php
+                            $k = rand(0,count($recomend)-1);
+                        ?>
+
+                        <li>
+                            <img src="<?php echo $recomend[$k]['img']; ?>" alt="shampoo">
+                            <p class="main-goods-type"> <?php echo $recomend[$k]['goods_name']; ?> </p>
                             <p class="main-text">
-                                Доктор Нонна на телеканале домашний в программе
-                                спросите повара Доктор Нонна на телеканале
-                                домашний в программе спросите повара Доктор
-                                Нонна на телеканале домашний в программе Доктор
-                                Нонна на телеканале домашний в программе...
+                                <?php echo $recomend[$k]['description']; ?>
                             </p>
                             <div class="price-row">
-                                <p class="price">280 грн.</p>
-                                <div><a href="info.php" class="buy" >Купить</a></div>
+                                <p class="price"><?php echo $recomend[$k]['price']; ?></p>
+                                <div><a href="<?php echo $recomend[$k]['url']; ?>" class="buy" >Купить</a></div>
                             </div>
                         </li>
+                        <?php foreach( $recomend as $items){ ?>
 
-                        <li>
-                            <a href="info.php"><img src="images/i-recomend/1-1.png" alt="shampoo"></a>
-                            <p class="goods-type">Шампунь ежедневного пользования</p>
-                            <p class="price">280 грн.</p>
+                            <li>
+                                <a href="<?php echo $items['url']; ?> "><img src="<?php echo $items['img']; ?>" alt="shampoo"></a>
+                                <p class="goods-type"><?php echo $items['goods_name']; ?></p>
+                                <p class="price"><?php echo $items['price']; ?></p>
 
-                        </li>
-
-                        <li>
-                            <a href="info.php"> <img src="images/i-recomend/1-2.png" alt="shampoo"></a>
-                            <p class="goods-type">Шампунь ежедневного пользования</p>
-                            <p class="price">280 грн.</p>
-
-                        </li>
-
-                        <li>
-                            <a href="info.php"> <img src="images/i-recomend/1-3.png" alt="shampoo"></a>
-                            <p class="goods-type">Шампунь ежедневного пользования</p>
-                            <p class="price">280 грн.</p>
-                        </li>
-
-                        <li>
-                            <a href="info.php"> <img src="images/i-recomend/1-1.png" alt="shampoo"></a>
-                            <p class="goods-type">Шампунь ежедневного пользования</p>
-                            <p class="price">280 грн.</p>
-                        </li>
-
-                        <li>
-                            <a href="info.php"> <img src="images/i-recomend/1-2.png" alt="shampoo"></a>
-                            <p class="goods-type">Шампунь ежедневного пользования</p>
-                            <p class="price">280 грн.</p>
-                        </li>
-
-                        <li>
-                            <a href="info.php"> <img src="images/i-recomend/1-3.png" alt="shampoo"></a>
-                            <p class="goods-type">Шампунь ежедневного пользования</p>
-                            <p class="price">280 грн.</p>
-                        </li>
+                            </li>
+                        <?php
+                        }
+                        ?>
 
                     </ul>
                 </div>
@@ -209,50 +120,38 @@ include_once('inc/header.html');
                 <div class="container">
                     <h2>Телеканал Теледом</h2>
                     <div class="clearfix">
+                        <?php
+                        $k = rand(0, count($teledom)-1);
+                        ?>
+
                         <div class="recomend-video  xs-col-12 sm-col-12 m-col-12 lm-col-6 lg-col-6">
-                            <video  class="defult-video" onclick="playPause()" poster="images/teledom/poster-top.png " id="video1">
-                                    <source src="video/1.ogv" type='video/ogg; codecs="theora, vorbis"'>
-                                    <source src="video/1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                                    <source src="video/1.webm" type='video/webm; codecs="vp8, vorbis"'>
+                            <video  class="defult-video" onclick="playPause()" poster="<?php echo $teledom[$k]['poster'];?>" id="video1">
+                                    <source src="<?php echo $teledom[$k]['src'];?>.ogv" type='video/ogg; codecs="theora, vorbis"'>
+                                    <source src="<?php echo $teledom[$k]['src'];?>.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                                    <source src="<?php echo$teledom[$k]['src'];?>.webm" type='video/webm; codecs="vp8, vorbis"'>
                                     Тег video не поддерживается вашим браузером.
 
 
                             </video>
                         </div>
                         <ul class="clearfix video">
-                            <li class="xs-col-6 sm-col-6 m-col-3 lm-col-3 lg-col-3">
-                                <video  class=" xs-col-12 sm-col-12 m-col-6 lm-col-6 lg-col-6 " poster="images/teledom/poster-1.png " >
-                                    <source src="video/1.ogv" type='video/ogg; codecs="theora, vorbis"'>
-                                    <source src="video/1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                                    <source src="video/1.webm" type='video/webm; codecs="vp8, vorbis"'>
-                                    Тег video не поддерживается вашим браузером.
-                                </video>
-                            </li>
-                            <li class="xs-col-6 sm-col-6 m-col-3 lm-col-3 lg-col-3 ">
-                                <video  class=" xs-col-12 sm-col-12 m-col-6 lm-col-6 lg-col-6 " poster="images/teledom/poster-2.png ">
-                                    <source src="video/1.ogv" type='video/ogg; codecs="theora, vorbis"'>
-                                    <source src="video/1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                                    <source src="video/1.webm" type='video/webm; codecs="vp8, vorbis"'>
-                                    Тег video не поддерживается вашим браузером.
 
-                                </video>
-                            </li>
-                            <li class="xs-col-6 sm-col-6 m-col-3 lm-col-3 lg-col-3 ">
-                                <video  class=" xs-col-12 sm-col-12 m-col-6 lm-col-6 lg-col-6 " poster="images/teledom/poster-1.png " >
-                                    <source src="video/1.ogv" type='video/ogg; codecs="theora, vorbis"'>
-                                    <source src="video/1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                                    <source src="video/1.webm" type='video/webm; codecs="vp8, vorbis"'>
-                                    Тег video не поддерживается вашим браузером.
-                                </video>
-                            </li>
-                            <li class="xs-col-6 sm-col-6 m-col-3 lm-col-3 lg-col-3 ">
-                                <video  class=" xs-col-12 sm-col-12 m-col-6 lm-col-6 lg-col-6 " poster="images/teledom/poster-2.png ">
-                                    <source src="video/1.ogv" type='video/ogg; codecs="theora, vorbis"'>
-                                    <source src="video/1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                                    <source src="video/1.webm" type='video/webm; codecs="vp8, vorbis"'>
-                                    Тег video не поддерживается вашим браузером.
-                                </video>
-                            </li>
+                            <?php foreach ($teledom as $items) { ?>
+
+                                <li class="xs-col-6 sm-col-6 m-col-3 lm-col-3 lg-col-3">
+                                    <video class=" xs-col-12 sm-col-12 m-col-6 lm-col-6 lg-col-6 "
+                                           poster="<?php echo $items['poster']; ?> ">
+                                        <source src="<?php echo $items['src'];?>.ogv" type='video/ogg; codecs="theora, vorbis"'>
+                                        <source src="<?php echo $items['src'];?>.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                                        <source src="<?php echo $items['src'];?>.webm" type='video/webm; codecs="vp8, vorbis"'>
+                                        Тег video не поддерживается вашим браузером.
+                                    </video>
+                                </li>
+
+                            <?php
+                            }
+                            ?>
+
                         </ul>
                     </div>
                     <div class="clearfix">
@@ -444,5 +343,3 @@ include_once('inc/footer.html');
     });
 </script>
 <!------------------------------------------ FlexSlider ------------------------------>
-</body>
-</html>
